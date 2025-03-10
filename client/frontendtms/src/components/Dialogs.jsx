@@ -4,7 +4,7 @@ import { FaQuestion } from "react-icons/fa";
 import ModalWrapper from "./ModalWrapper";
 import Button from "./Button";
 
-export default function ConfirmatioDialog({
+export default function ConfirmationDialog({
   open,
   setOpen,
   msg,
@@ -50,7 +50,7 @@ export default function ConfirmatioDialog({
                   : "bg-red-600 hover:bg-red-500"
               )}
               onClick={onClick}
-              label={type === "restore" ? "Restore" : "Delete"}
+              label={type === "restore" || type === "restoreAll" ? "Restore" : "Delete"} 
             />
 
             <Button
