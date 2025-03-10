@@ -52,7 +52,9 @@ const linkData = [
   ];
 
 const Sidebar = () => {
-    const { user } = useSelector((state) => state.auth);
+  const authState = useSelector((state) => state.auth) || {}; // ✅ FIXED fallback
+  const { user } = authState;
+  console.log("Auth State in Sidebar:", authState); // Debugging Log
 
     const dispatch = useDispatch();
     const location = useLocation();
@@ -92,6 +94,12 @@ const NavLink = ({ el }) => {
           <NavLink el={link} key={link.label} />
         ))}
     </div>
+    <div className=''>
+        <button className='w-full flex gap-2 p-2 items-center text-lg text-gray-800'>
+          <MdSettings />
+          <span>Settings</span>
+        </button>
+      </div>
   </div>
   );
   
