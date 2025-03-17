@@ -52,7 +52,7 @@ const linkData = [
   ];
 
 const Sidebar = () => {
-  const authState = useSelector((state) => state.auth) || {}; // ✅ FIXED fallback
+  const authState = useSelector((state) => state.auth) || {}; 
   const { user } = authState;
   console.log("Auth State in Sidebar:", authState); // Debugging Log
 

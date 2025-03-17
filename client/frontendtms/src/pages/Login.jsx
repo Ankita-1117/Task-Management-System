@@ -23,7 +23,7 @@ const Login = () => {
         console.log("Logging in with:", data);
 
         // Simulating a successful login (Replace this with an API call)
-        const fakeUser = { email: data.email, name: "John Doe" };
+        const fakeUser = { email: data.email, name: "Ankita Bakshi" };
 
         // Dispatch login action to update Redux state
         dispatch(login(fakeUser));
@@ -45,8 +45,11 @@ const Login = () => {
                             <span>Zidio</span>
                             <span>Task Manager</span>
                         </p>
-                    </div>
-                </div>
+                        <div className='cell'>
+              <div className='circle rotate-in-up-left'></div>
+            </div>
+          </div>
+        </div>
 
                 {/* Right Side */}
                 <div className='w-full md:w-1/3 p-4 md:p-1 flex flex-col justify-center items-center'>
@@ -79,6 +82,9 @@ const Login = () => {
                                 })}
                                 error={errors.password ? errors.password.message : ""}
                             />
+                            <span className='text-sm text-gray-500 hover:text-blue-600 hover:underline cursor-pointer'>
+                Forget Password?
+              </span>
                             <Button type='submit' label='Login' className='w-full h-10 bg-blue-700 text-white rounded-full' />
                         </div>
                     </form>
